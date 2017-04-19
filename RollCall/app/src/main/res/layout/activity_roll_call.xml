@@ -14,7 +14,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp"
         android:background="@mipmap/start"
-        android:text="开始签到" />
+        android:text="开始点名" />
 
     <Button
         android:id="@+id/bt_stop"
@@ -24,5 +24,14 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp"
         android:background="@mipmap/stop"
-        android:text="停止签到" />
+        android:text="停止点名" />
+
+    <Button
+        android:id="@+id/bt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@mipmap/result"
+        android:text="查看结果" />
 </LinearLayout>

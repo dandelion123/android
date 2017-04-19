@@ -4,30 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
-        <!--
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="退出"
-                    android:textSize="20dp"
-                    android:background="@mipmap/curriculum"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="设置"
-                    android:textSize="20dp"
-                    android:background="@mipmap/curriculum"/>
-                    -->
-    </LinearLayout>
-
     <Button
         android:id="@+id/bt_curriculum"
         android:layout_width="wrap_content"
@@ -39,21 +15,22 @@
         android:text="课表管理" />
 
     <Button
-        android:id="@+id/bt_rollcall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:background="@mipmap/rollcall"
-        android:text="点名" />
+        android:background="@mipmap/curriculum"
+        android:text="点名"
+        android:id="@+id/bt_RollCall"
+        android:textSize="20dp" />
 
     <Button
-        android:id="@+id/bt_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:background="@mipmap/result"
-        android:text="查看结果" />
+        android:background="@mipmap/curriculum"
+        android:id="@+id/bt_exit"
+        android:text="退出"
+        android:textSize="20dp" />
+
+
 </LinearLayout>

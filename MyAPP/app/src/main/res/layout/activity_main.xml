@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.com.myapp.MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提示：\n以下为联系人列表，点击可拨打电话，也可添加联系人到黑名单，管理黑名单请点击菜单"
+        android:textSize="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="number"/>
+        <Button
+            android:id="@+id/bt_call"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="拨打电话"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_contact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+</LinearLayout>

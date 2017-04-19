@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_blacklist"
+        android:title="黑名单管理" />
+    <item
+        android:id="@+id/start_service"
+        android:title="开启拦截服务" />
+    <item
+        android:id="@+id/stop_service"
+        android:title="关闭拦截服务" />
+
+</menu>

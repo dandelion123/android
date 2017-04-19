@@ -1,5 +1,6 @@
 package example.com.rollcall;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 public class RollCallActivity extends AppCompatActivity implements View.OnClickListener{
     private Button button_start;
     private Button button_stop;
+    private Button button_result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,27 +19,22 @@ public class RollCallActivity extends AppCompatActivity implements View.OnClickL
         button_stop=(Button)findViewById(R.id.bt_stop);
         button_start.setOnClickListener(this);
         button_stop.setOnClickListener(this);
+        button_result=(Button)findViewById(R.id.bt_result);
+        button_result.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_start://开始点名响应函数
-                new Thread(new Runnable() {//开启线程
-                    @Override
-                    public void run() {
-                        String result=new HttpConnectToServer(1).connect();//连接服务器，并发送开始点名指令给服务器
-                        Toast.makeText(RollCallActivity.this,result,Toast.LENGTH_SHORT);
-                    }
-                }).start();
+                //// TODO: 2017/4/19
                 break;
             case R.id.bt_stop://停止点名响应函数
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {//开启线程
-                        new HttpConnectToServer(2).connect();//开启线程，并发送停止点名指令给服务器
-                    }
-                }).start();
+                //// TODO: 2017/4/19
+                break;
+            case R.id.bt_result://查看签到结果
+                Intent intent_result = new Intent(RollCallActivity.this, ResultActivity.class);
+                startActivity(intent_result);
                 break;
             default:
                 break;
