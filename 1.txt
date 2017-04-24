@@ -1,0 +1,38 @@
+/**********条件查询***********/
+    private boolean query(String name, String pwd) {
+        //判断账户是否存在
+        final int[] flag = {0};
+        BmobQuery<Teacher> bq1 = new BmobQuery<Teacher>();
+        bq1.addWhereEqualTo("account", name);
+        BmobQuery<Teacher> bq2 = new BmobQuery<Teacher>();
+        bq2.addWhereEqualTo("password", pwd);
+
+        List<BmobQuery<Teacher>> andQuery = new ArrayList<BmobQuery<Teacher>>();
+        andQuery.add(bq1);
+        andQuery.add(bq2);
+
+        //查询符合整个and条件的人
+        BmobQuery<Teacher> query = new BmobQuery<Teacher>();
+        query.and(andQuery);
+        query.findObjects(new FindListener<Teacher>() {
+            @Override
+            public void done(List<Teacher> list, BmobException e) {
+                if (e == null) {
+                    Log.i("bmob", "账户个数：" + list.size());
+                    if (list.size() == 0) {
+                        Log.i("bmob", "个数：" + list.size());
+                        flag[0] = 1;
+                        Log.i("bmob", "flag：" + flag[0]);
+                    }
+                } else {
+                    Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
+                }
+            }
+        });
+        Log.i("bmob", "外面flag：" + flag[0]);
+        if (1 == flag[0]) {
+            Log.i("bmob", "进入IF" + flag[0]);
+            return true;
+        }
+        return false;
+    }

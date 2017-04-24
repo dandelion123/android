@@ -1,15 +1,15 @@
-package example.com.rollcall;
+package example.com.UI;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import cn.bmob.v3.Bmob;
-
-import static java.security.AccessController.getContext;
+import cn.bmob.v3.BmobUser;
+import example.com.rollcall.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Bmob.initialize(this, "e7eacece0f855e4049efbd1013fd2f17");
         //第二：自v3.4.7版本开始,设置BmobConfig,允许设置请求超时时间、文件分片上传时每片的大小、文件的过期时间(单位为秒)，
         //BmobConfig config =new BmobConfig.Builder(this)
         ////设置appkey
@@ -50,10 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent_curriculum);
                 break;
             case R.id.bt_RollCall:
-//                Intent intent_RollCall = new Intent(MainActivity.this, RollCallActivity.class);
-//                startActivity(intent_RollCall);
-                Intent intent_Login = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent_Login);
+                Intent intent_RollCallActivity = new Intent(MainActivity.this, RollCallActivity.class);
+                startActivity(intent_RollCallActivity);
                 break;
             case R.id.bt_exit:
                 finish();
@@ -61,5 +58,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
+    }
+
+    @Override
+    public boolean onCreatePanelMenu(int featureId, Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreatePanelMenu(featureId, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.quit_item:
+                BmobUser.logOut();
+                Intent intent_Login = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent_Login);
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

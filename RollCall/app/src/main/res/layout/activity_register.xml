@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="1"
-    tools:context="example.com.UI.LoginActivity">
+    tools:context="example.com.rollcall.example.com.UI.RegisterActivity"
+    android:stretchColumns="1">
 
     <TableRow>
 
@@ -14,7 +14,7 @@
             android:text="账号:" />
 
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_r_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入账号" />
@@ -28,43 +28,21 @@
             android:text="密码:" />
 
         <EditText
-            android:id="@+id/et_pwd"
+            android:id="@+id/et_r_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入密码"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:hint="请输入密码" />
     </TableRow>
 
     <TableRow>
-
-        <CheckBox
-            android:id="@+id/ch_save"
-            android:layout_height="wrap_content"
-            android:text="保存密码" />
 
         <Button
-            android:id="@+id/bt_login"
-            android:layout_width="wrap_content"
+            android:id="@+id/bt_register"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1E90FF"
-            android:text="登陆" />
-    </TableRow>
-
-    <TableRow>
-        <TextView />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/tv_register"
-            android:text="新用户注册"
-            android:textColor="#1E90FF" />
-
-        <TextView
-            android:id="@+id/tv_exit"
-            android:layout_gravity="end"
-            android:text="退出系统"
-            android:textColor="#1E90FF" />
+            android:layout_span="2"
+            android:text="注册" />
     </TableRow>
 </TableLayout>

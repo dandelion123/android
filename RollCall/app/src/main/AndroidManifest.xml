@@ -22,17 +22,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="example.com.UI.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CurriculumActivity" />
-        <activity android:name=".RollCallActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name="example.com.UI.MainActivity">
+        </activity>
+        <activity android:name="example.com.UI.CurriculumActivity" />
+        <activity android:name="example.com.UI.RollCallActivity" />
+        <activity android:name="example.com.UI.ResultActivity" />
+        <activity android:name="example.com.UI.RegisterActivity" />
+        <activity android:name="example.com.UI.AddCourseActivity"></activity>
     </application>
 
 </manifest>
