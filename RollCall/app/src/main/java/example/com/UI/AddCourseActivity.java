@@ -86,14 +86,12 @@ public class AddCourseActivity extends AppCompatActivity implements AdapterView.
                     Toast.makeText(AddCourseActivity.this, "请输入课程ID、课程名、上课地点", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                List<Course> list = new ArrayList<>();
                 final Course course = new Course();
                 course.setDay(day);
                 course.setTime(time);
                 course.setCourseID(ID);
                 course.setCourseName(Name);
                 course.setPlace(Place);
-                list.add(course);
                 //保存到服务器
                 course.save(new SaveListener<String>() {
                     @Override

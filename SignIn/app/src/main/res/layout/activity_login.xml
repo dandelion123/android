@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    tools:context="com.example.administrator.signin.UI.LoginActivity">
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号:" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入账号" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码:" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:inputType="textPassword" />
+    </TableRow>
+
+    <TableRow>
+
+        <CheckBox
+            android:id="@+id/ch_save"
+            android:layout_height="wrap_content"
+            android:text="保存密码" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1E90FF"
+            android:text="登陆" />
+    </TableRow>
+
+    <TableRow>
+        <TextView />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:text="新用户注册"
+            android:textColor="#1E90FF" />
+
+        <TextView
+            android:id="@+id/tv_exit"
+            android:layout_gravity="end"
+            android:text="退出系统"
+            android:textColor="#1E90FF" />
+    </TableRow>
+</TableLayout>

@@ -118,7 +118,7 @@ public class CourseTableView extends RelativeLayout {
 
 
     public interface OnCourseItemClickListener {
-        void onCourseItemClick(TextView tv, int jieci, int day, String des);
+        void onCourseItemClick(TextView tv, int jieci, int day, String des,String CourseID,String ObjectID);
     }
 
     private void init(Context context) {
@@ -194,9 +194,8 @@ public class CourseTableView extends RelativeLayout {
     }
 
     private void updateCourseViews() {
-        // TODO: 2017/4/21 clear的 必要性？？？
         Log.d("my","updateCourseViews");
-        // clearViewsIfNeeded();
+        clearViewsIfNeeded();
         FrameLayout fl;
         FrameLayout.LayoutParams flp;
         TextView tv;
@@ -225,8 +224,9 @@ public class CourseTableView extends RelativeLayout {
             tv.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // TODO: 2017/5/6 0006
                     if (onCourseItemClickListener != null)
-                        onCourseItemClickListener.onCourseItemClick((TextView) v, jieci, day, c.getCourseName());
+                        onCourseItemClickListener.onCourseItemClick((TextView) v, jieci, day, c.getCourseName(),c.getCourseID(),c.getObjectId());
                 }
             });
             fl.addView(tv);

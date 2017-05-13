@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:stretchColumns="2"
+    tools:context="com.example.administrator.signin.UI.AddCourseActivity">
+
+    <ListView
+        android:id="@+id/lv_Course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+    <Button
+        android:id="@+id/bt_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E90FF"
+        android:text="刷新" />
+</LinearLayout>

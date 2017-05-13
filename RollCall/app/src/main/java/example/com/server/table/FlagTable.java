@@ -11,6 +11,7 @@ public class FlagTable extends BmobObject {
     private String C_ID;
     private boolean Flag=false;
 
+
     public void setT_ID(String t_ID) {
         T_ID = t_ID;
     }

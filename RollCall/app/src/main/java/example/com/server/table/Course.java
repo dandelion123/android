@@ -18,6 +18,7 @@ public class Course extends BmobObject implements Serializable {
     private int day;//上课时间//星期几
     private int Time;//第几节课
     private String Place;
+    private String TeacherID;
     private int spanNum = 2;
 
     private String ClassRoomName;
@@ -81,6 +82,15 @@ public class Course extends BmobObject implements Serializable {
     public void setSpanNum(int spanNum) {
         this.spanNum = spanNum;
     }
+
+    public void setTeacherID(String teacherID) {
+        TeacherID = teacherID;
+    }
+
+    public String getTeacherID() {
+        return TeacherID;
+    }
+
 
     @Override
     public String toString() {

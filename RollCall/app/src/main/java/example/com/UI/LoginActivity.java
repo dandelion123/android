@@ -34,13 +34,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bmob.initialize(this, "e7eacece0f855e4049efbd1013fd2f17");
-        Teacher userInfo = BmobUser.getCurrentUser(Teacher.class);
-        if(userInfo != null){
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
         setContentView(R.layout.activity_login);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         editText_name = (EditText) findViewById(R.id.et_name);
@@ -89,14 +82,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 editor.clear();
                             }
                             editor.commit();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, CurriculumActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
                             editText_name.setText("");
                             editText_pwd.setText("");
+                            // TODO: 2017/5/4 0004 登录失败判断给出正确的提示
                             Toast.makeText(LoginActivity.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
-                            Log.i("LoginActivity",e.toString());
+                            Log.e("LoginActivity",e.toString());
                         }
                     }
                 });
